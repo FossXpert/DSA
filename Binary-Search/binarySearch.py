@@ -1,6 +1,18 @@
 
-def summ( a, b):
-    return a+b
+def binarySearch(arr:list[int],target:int):
+    left,right=0,len(arr-1)
+    while left<=right:
+        mid = (left+right)//2
+        if arr[mid]==target:
+            return mid
+        elif arr[mid]<target:
+            left=mid+1
+        else:
+            right=mid-1
+    return -1
 
-
-print(summ(5,6))
+if __name__ == '__main__':
+    arr = [int(x) for x in input().split()]
+    target = int(input())
+    res = binarySearch(arr,target)
+    print(res)
