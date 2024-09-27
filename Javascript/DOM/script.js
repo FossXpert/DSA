@@ -33,8 +33,47 @@ a.forEach(element => {
 
 //Event delegation example
 
-const parent = document.getElementById('parent');
+// const parent = document.getElementById('parent');
 
-parent.addEventListener('click',(e)=>{
-    console.log(e.target);
+// parent.addEventListener('click',(e)=>{
+   
+
+// })
+
+
+//Polyfils in Js (Call , Apply and Bind in Js)
+// let printName = function(){
+//     var fname = 'Rahul';
+//     var lname = 'Ray';
+
+//     console.log(this.fname + " " + this.lname);
+// }
+
+
+const element = document.getElementById('new');
+element.addEventListener('click',()=>{
+    console.log('Hi')
+
+    // let names = {
+    //     fname : 'Rishu',
+    //     lname : 'Rai'
+    // }
+    // let printName = function(){
+    //     var fname = 'Rahul';
+    //     var lname = 'Ray';
+    
+    //     console.log(this.fname + " " + this.lname);
+    // }
+    // printName.call(names);
+
+    let multiply = function(x,y){
+        console.log(x*y);
+    }
+    
+    multiply =  multiply.bind(this,3,3);
+    multiply(4);
 })
+
+// Currying in Javascript
+
+
