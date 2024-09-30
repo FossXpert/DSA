@@ -66,12 +66,18 @@ element.addEventListener('click',()=>{
     // }
     // printName.call(names);
 
-    let multiply = function(x,y){
-        console.log(x*y);
-    }
+    // let multiply = function(x,y){
+    //     console.log(x*y);
+    // }
     
-    multiply =  multiply.bind(this,3,3);
-    multiply(4);
+    // multiply =  multiply.bind(this,3,3);
+    // multiply(4);
+
+    const a = 1;
+    console.log(a);
+
+    a = 2;
+    console.log(a);
 })
 
 // Currying in Javascript
