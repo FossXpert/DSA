@@ -73,11 +73,17 @@ element.addEventListener('click',()=>{
     // multiply =  multiply.bind(this,3,3);
     // multiply(4);
 
-    const a = 1;
-    console.log(a);
+    // example for map function
+    // Example -1 
+    const number = [1,2,3,4,5,6];
+    // we have to transform these number to multiply by 2
+    function mutlFunction(num){
+        return num * 2;
+    }
+    const multBy2 = number.map(mutlFunction);
 
-    a = 2;
-    console.log(a);
+    console.log(multBy2);
+
 })
 
 // Currying in Javascript
