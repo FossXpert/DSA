@@ -77,10 +77,8 @@ element.addEventListener('click',()=>{
     // Example -1 
     const number = [1,2,3,4,5,6];
     // we have to transform these number to multiply by 2
-    function mutlFunction(num){
-        return num * 2;
-    }
-    const multBy2 = number.map(mutlFunction);
+   
+    const multBy2 = number.map((num,index)=>num*2);
 
     console.log(multBy2);
 
