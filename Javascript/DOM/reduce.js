@@ -1,7 +1,7 @@
 // 1. Sum of Numbers (Easy)
 // Write a function that uses reduce() to return the sum of all numbers in an arra
 
-
+// https://youtu.be/zdp0zrpKzIE
 
 const element5 = document.getElementById('new');
 element5.addEventListener('click', () => {

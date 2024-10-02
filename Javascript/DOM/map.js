@@ -2,7 +2,7 @@
 
 // 1. Double the Numbers (Easy)
 // Write a function that takes an array of numbers and returns a new array where each number is doubled using map().
-
+// https://youtu.be/zdp0zrpKzIE
 
 const element1 = document.getElementById('new');
 element1.addEventListener('click',()=>{
