@@ -78,7 +78,12 @@ element8.addEventListener('click', () => {
     //   30: [{ name: 'Jane', age: 30 }, { name: 'Mike', age: 30 }]
     // }
 
-    people.reduce((acc,curr),{})
-    
-      
+    const result = people.reduce((acc,curr)=>{
+        if(!acc[curr.age]){
+            acc[curr.age] = []
+        }
+        acc[curr.age].push(curr)
+        return acc;
+    },{});
+    console.log(result)
 })
