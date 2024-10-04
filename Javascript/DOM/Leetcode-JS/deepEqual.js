@@ -7,10 +7,18 @@ function deepEqual(obj1,obj2){
             return false;
     }
 
-    const keys1 = obj1.keys;
-    const keys2 = obj2.keys;
+    // Check if both objects have the same number of properties
+    const keys1 = Object.keys(obj1);
+    const keys2 = Object.keys(obj2);
 
     if(keys1.length !== keys2.length)return false;
 
-    
+    // Recursively check each property
+    for(let key of keys1 ) {
+    // Check if both objects have the same property and recursively check equality
+        if(!keys2.includes(key) || !deepEqual(obj1[key],obj2[key])){
+            return false;
+        }
+    }
+    return true;
 }
