@@ -14,7 +14,7 @@ function deepEqual(obj1,obj2){
 
     // Recursively checking for keys are equal or not
     for (let keys of keys1){
-        if(!keys2.includes(keys) || !deepEqual(obj1[keys],obj2[keys])){
+        if( !keys2.includes(keys) || !deepEqual(obj1[keys],obj2[keys]) ){
             return false;
         }
     }
