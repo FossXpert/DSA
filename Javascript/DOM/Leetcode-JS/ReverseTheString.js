@@ -39,10 +39,10 @@ function reverseString(a){
             i++;
             j--;
         }
-        else if(isAlphabet(arr[i]) === false && isAlphabet(arr[j]) === true){
+        else if(isAlphabet(arr[i]) === false){
             i++;
         }
-        else if(isAlphabet(arr[i]) === true && isAlphabet(arr[j]) === false){
+        else if(isAlphabet(arr[j]) === false){
             j--;
         }
         else {
