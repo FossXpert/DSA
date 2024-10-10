@@ -24,26 +24,22 @@ const nestedObject = {
 // }
 
 
-function flattenObject(obj, parent) {
-  let finalObject = {}
+function flattenObject(obj,parent){
+  let result = {}
 
-  function getFlatObject(obj, parent){
-
-    for (let key in obj) {
-      let newParent = key + parent;
-      console.log(newParent)
-
-      let value = obj[key];
-      console.log("value",value)
-      if (typeof value === 'object') {
-        getFlatObject(value, newParent + '.');
-      } else {
-        finalObject[newParent] = value;
+  function getFlatObject(obj,parent){
+    for(let key in obj){
+      let newParent = parent + key;
+      let value = obj[key]
+      if(typeof value === 'object'){
+        getFlatObject(value,newParent+'.')
+      }else{
+        result[newParent] = value
       }
     }
   }
-  getFlatObject(obj,parent);
-  return finalObject;
+  getFlatObject(obj,parent)
+  return result;
 }
 
 
