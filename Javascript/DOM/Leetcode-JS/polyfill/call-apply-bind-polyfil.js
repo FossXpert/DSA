@@ -10,27 +10,35 @@ const userName = {
     company: 'Infosys'
 }
 
-function getDetails(smart, hardworking) {
-    console.log(this.firstName + " " + this.lastName + " " + `who works in ${this.company}, He is ` + smart + " " + hardWorking+" guy")
+function getDetails(smart,hardWorking) {
+    console.log(this.firstName + " " + this.lastName + " " + `who works in ${this.company}, He is ` + smart + ` and ${hardWorking} ` +"guy")
 }
 
-let getUser = getDetails.bind(userName, 'smart', 'hardWorking');
-console.log(getUser)
-getUser()
+let getUser = getDetails.bind(userName, 'smart','hardWorking');
+console.log(getUser);
+getUser();
 
 
-
+//Final ANswer
+//First watch thisd vide 
+//https://youtu.be/ke_y6z0xRpk?si=ZDNZrdTnMeiibSwd
 // Now we have to implement a custom myBind() method who works exactly like .bind()
 
-
-let getCustomUser = getDetails.myBind(userName);
-
 Function.prototype.myBind = function (...args) {
-    let obj = args[0]
-    return function () {
-        
+    let obj = this;
+    let params = args.splice(1);
+    console.log("params",params);
+    return function (...args2) {
+        // ..args2 are those arguments which are being passed directly from getUser2()
+        let combineArgs = [...params,...args2] //using ES6 Syntax, It creates a larger array
+        let combineArgs1 = params.concat(...args2) // using normal concat method
+        obj.apply(args[0],combineArgs1);
     }
 }
+
+let getUser2 = getDetails.myBind(userName,'Smart');
+getUser2("Nice");
+
 
 
 
