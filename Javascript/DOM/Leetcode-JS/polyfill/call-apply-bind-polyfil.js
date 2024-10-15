@@ -28,7 +28,7 @@ let getCustomUser = getDetails.myBind(userName);
 Function.prototype.myBind = function (...args) {
     let obj = args[0]
     return function () {
-
+        
     }
 }
 
