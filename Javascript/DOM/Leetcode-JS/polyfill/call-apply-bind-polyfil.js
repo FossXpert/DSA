@@ -41,4 +41,18 @@ getUser2("Nice");
 
 
 
+// Practice
+Function.prototype.mybind = function(...args){
+    let obj = this;
+    let param = args.splice(1);
+    return function(...args2){
+        obj.apply(args[0],[...param,...args2])
+    }
+}
+
+
+let getUser3 = getDetails.mybind(userName,'Smart');
+getUser2("Nice");
+
+
 
