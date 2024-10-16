@@ -6,33 +6,51 @@
 // meaning if the object is no longer referenced elsewhere, it can be garbage collected.
 
 
-  function hasCycle(obj,seen = new WeakSet()){
+function hasCycle(obj,seen = new WeakSet()){
+if(obj && typeof obj === 'object'){
+    if(seen.has(obj)){
+        return true;
+    }
+    seen.add(obj);
+    // Recursively check for cycles in nested objects
+    for(let key in obj){
+        if(obj.hasOwnProperty(key) && hasCycle(obj[key],seen)) {
+            return true;
+        }
+    }
+}
+return false;
+}
+  
+// Test cases
+const obj1 = {
+a: 1,
+b: {
+    c: 2,
+    d: 3
+}
+};
+console.log(hasCycle1(obj1));  // Output: false (No cycle)
+
+const obj2 = { a: 1 };
+obj2.b = obj2;  // Circular reference
+console.log(hasCycle1(obj2));  // Output: true (Cycle detected)
+
+
+// practice
+
+function hasCycle1(obj, seen =new WeakSet()){
     if(obj && typeof obj === 'object'){
         if(seen.has(obj)){
-           return true;
+            return true;
         }
-        seen.add(obj);
-        // Recursively check for cycles in nested objects
+        seen.add(obj)
+
         for(let key in obj){
-            if(obj.hasOwnProperty(key) && hasCycle(obj[key],seen)) {
+            if(hasCycle1(obj[key],seen)){
                 return true;
             }
         }
     }
     return false;
-  }
-  
-// Test cases
-const obj1 = {
-    a: 1,
-    b: {
-      c: 2,
-      d: 3
-    }
-  };
-  console.log(hasCycle(obj1));  // Output: false (No cycle)
-  
-  const obj2 = { a: 1 };
-  obj2.b = obj2;  // Circular reference
-  console.log(hasCycle(obj2));  // Output: true (Cycle detected)
-
+}
