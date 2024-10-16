@@ -43,7 +43,5 @@ function flattenObject(obj,parent){
 }
 
 
-const ans = flattenObject(nestedObject, "");
+const ans = flattenObject1(nestedObject, "");
 console.log(ans)
-
-

@@ -20,7 +20,7 @@ getUser();
 
 
 //Final ANswer
-//First watch thisd video to understand then u can only understand 2nd implememtation
+//First watch this video to understand then u can only understand 2nd implememtation
 //https://youtu.be/ke_y6z0xRpk?si=ZDNZrdTnMeiibSwd
 // Now we have to implement a custom myBind() method who works exactly like .bind()
 
